@@ -49,10 +49,11 @@ const DigitsButton = styled.button`
 
 export const CalculatorSizer = styled.div`
     display: flex;
-    min-height: 100vh;
+    min-height: 60vh;
     align-items: center;
     justify-content: center;
     padding: 16px;
+    border: 1px inset black;
 `
 export const CalculatorContainer = styled.div`
     width: 100%;

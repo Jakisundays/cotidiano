@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react'
-import { ClockContainer, ClockScreen, ClockTime } from './ClockComponents'
+import { ClockContainer, ClockScreen, ClockTime, ClockDate } from './ClockComponents'
 
 const Clock = () => {
 
     //state
     const [time, setTime] = useState('')
+    const [date, setDate] = useState('')
+    
 
     //Adds a 0 if the value is a one digit number
     const formatTime = (value) => {
@@ -29,15 +31,31 @@ const Clock = () => {
 
     //Clock Tick Function
     const tick = () => {
+        //Arrays
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        
+
         //Date Variables
         const day = new Date();
         const hour = day.getHours();
         const minute = day.getMinutes();
         const second = day.getSeconds();
+        const weekDay = days[day.getDay()];
+        const today = day.getDate();
+        const month = months[day.getMonth()];
+        const year = day.getFullYear();
         
-        //Set the state to the formated time
+        //update status
         setTime(formatTime(hour) + hour + ':' + formatTime(minute) + minute + ':' + formatTime(second) + second)
+        setDate(weekDay + ', ' + today + ' ' + month + ' ' + year);
     }
+
+    
+
+    
+
+    
 
   return (
     <ClockContainer>
@@ -45,6 +63,9 @@ const Clock = () => {
             <ClockTime>
                 {time}
             </ClockTime>
+            <ClockDate>
+                {date}          
+            </ClockDate>
         </ClockScreen>
     </ClockContainer>
   )
