@@ -51,12 +51,6 @@ const Clock = () => {
         setDate(weekDay + ', ' + today + ' ' + month + ' ' + year);
     }
 
-    
-
-    
-
-    
-
   return (
     <ClockContainer>
         <ClockScreen>

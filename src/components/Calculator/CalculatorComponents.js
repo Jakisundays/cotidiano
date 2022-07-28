@@ -53,8 +53,9 @@ export const CalculatorSizer = styled.div`
     align-items: center;
     justify-content: center;
     padding: 16px;
-    border: 1px inset black;
+    z-index: 1;
 `
+
 export const CalculatorContainer = styled.div`
     width: 100%;
     max-width: 400px;

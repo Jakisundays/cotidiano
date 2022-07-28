@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 export const ClockContainer = styled.div`
-    border: 1px inset black;
+    z-index: 1;
+    grid-area: 1 / 1 / 2 / 3;
 `
 
 export const ClockScreen = styled.div`
