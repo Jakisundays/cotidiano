@@ -12,13 +12,18 @@ function App() {
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto auto;
+    background-color: red;
+
+    @media (max-width: 768px){
+      display: flex;
+      flex-direction: column;
+    }
   `
 
   return (
     <>
     <Grid>
       <Clock />
-
       <Calculator />
       <Crypto />
       <Gym />

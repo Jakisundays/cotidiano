@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { CalculatorSizer, CalculatorContainer, Display, SpanA, Operators, Add, Subtract, Multiply, Divide, Deletear, Digits, CreateButton, Cero, Dot, Result, Reseter  } from './CalculatorComponents';
+import { CalculatorContainer, Display, SpanA, Operators, Add, Subtract, Multiply, Divide, Deletear, Digits, CreateButton, Cero, Dot, Result, Reseter  } from './CalculatorComponents';
 
 const Calculator = () => {
 
@@ -50,7 +50,7 @@ const Calculator = () => {
     }
 
   return (
-    <CalculatorSizer>
+    
         <CalculatorContainer>
             <Display>
                 { result ? <SpanA>({result})</SpanA> : '' }
@@ -74,7 +74,7 @@ const Calculator = () => {
             </Digits>
                 <Reseter onClick={reset}>Reset</Reseter>
         </CalculatorContainer>
-    </CalculatorSizer>
+
    
   )
 }

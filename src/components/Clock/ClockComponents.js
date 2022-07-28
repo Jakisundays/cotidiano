@@ -10,7 +10,7 @@ export const ClockScreen = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin-top: 5px;
     border: 1px inset black;
     border-radius: 5px;
     background-color: var(--dark);

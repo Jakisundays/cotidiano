@@ -11,10 +11,6 @@
   --dark: #2d142c;
   --light: #fff;
 }
-
-.grid{
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto auto;
+.x{
+  border: solid red;
 }
-

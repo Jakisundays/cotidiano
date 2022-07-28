@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { GymSection, GymClock, GymButtons, GymButton, GymForm, GymReps, RepsInput, GymTime, GymTimeInput, GymBreak, BreakInput, GymSubmit, FormDisplay, GymSizer, GymHr} from './GymComponents';
+import { GymSection, GymClock, GymButtons, GymButton, GymForm, GymReps, RepsInput, GymTime, GymTimeInput, GymBreak, BreakInput, GymSubmit, FormDisplay, GymResults, GymSubmited, GymHr, GymH1} from './GymComponents';
 
 const Gym = () => {
   //Estados
@@ -7,9 +7,9 @@ const Gym = () => {
   const [timeOn, setTimeOn] = useState(false);
   const [gymTime, setGymTime] = useState(null);
   const [reps, setReps] = useState(null);
-  const [relaxOn, setRelaxOn] = useState(false);
   const [relax, setRelax] = useState(null);
   const [statico, setStatico] = useState(null);
+  const [relaxOn, setRelaxOn] = useState(false);
 
   //useEffects:
 
@@ -83,6 +83,7 @@ const Gym = () => {
     setRelax(document.getElementById('gymBreak').value);
     setStatico(document.getElementById('gymBreak').value);
   };
+  // m
   //Evita que la pagina se recargue y q se resete el estado.
   const fnHandleSubmit = event => {
     event.preventDefault();
@@ -113,44 +114,47 @@ const Gym = () => {
   }
   
   return (
-    <GymSizer>
       <GymSection>
-        {/* form */}
+        <GymH1>Gym Reps Counter </GymH1>
+        {/* form  quitar*/}
         <GymForm onSubmit={fnHandleSubmit}>
           <FormDisplay>
             {/* GymReps input */}
             <GymReps for='gymReps'>Reps: </GymReps>
-            <RepsInput type='number' id='gymReps' />
+            <RepsInput type='number' id='gymReps' min='0'/>
           </FormDisplay>
           <FormDisplay>
             {/* GymTime Input */}
             <GymTime for='gymTime'>Time: </GymTime>
-            <GymTimeInput type='number' id='gymTime' />
+            <GymTimeInput type='number' id='gymTime'min='0'/>
           </FormDisplay>
             <FormDisplay>
             {/* GymBreak Input */}
             <GymBreak for='gymReps'>BreakTime: </GymBreak>
-            <BreakInput type='number' id='gymBreak'  />
+            <BreakInput type='number' id='gymBreak' min='0' />
             </FormDisplay>
           {/* SubmitButton */}
           <GymSubmit type="submit" onClick={update} >Submit</GymSubmit>
         </GymForm>
 
-        <GymHr/>
 
-        <GymClock>Reps left: {reps}</GymClock>
+        <GymResults>
+          <GymSubmited>Reps: {reps}</GymSubmited>
+          <GymSubmited>Duration: {gymTime}</GymSubmited>
+          <GymSubmited>Break Time: {relax}</GymSubmited>
+        </GymResults>
+
         <GymClock>{relaxOn ? 'Break Time: ' + relax : 'Timer: ' + time}</GymClock>
 
         {/* buttones */}
         <GymButtons>
-          <GymButton onClick={start}>start</GymButton>
-          <GymButton onClick={() => setTimeOn(false)}>stop</GymButton>
+          <GymButton onClick={start}>Start</GymButton>
           <GymButton onClick={() => setTimeOn(true)}>Resume</GymButton>
+          <GymButton onClick={() => setTimeOn(false)}>Stop</GymButton>
           <GymButton onClick={reset}>Reset</GymButton>
         </GymButtons>
 
-      </GymSection>
-    </GymSizer>    
+      </GymSection> 
   )
 }
 

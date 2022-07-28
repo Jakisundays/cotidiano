@@ -1,23 +1,11 @@
 import styled from 'styled-components'
 
-const Button = styled.button`
-    apparance: none;
-    border: none;
-    color: #fff;
-    font-size: 20px;
-    padding: 16px;
-    cursor: pointer;
-    transition: 0.4s;
-
-    &:hover{
-        opacity: 0.9;
-    }`
 
 const OperatorButton = styled.button`
     apparance: none;
     border: none;
     color: #fff;
-    font-size: 20px;
+    font-size: 25px;
     padding: 16px;
     cursor: pointer;
     transition: 0.4s;
@@ -33,7 +21,7 @@ const DigitsButton = styled.button`
     apparance: none;
     border: none;
     color: #fff;
-    font-size: 20px;
+    font-size: 25px;
     padding: 16px;
     cursor: pointer;
     transition: 0.4s;
@@ -47,22 +35,15 @@ const DigitsButton = styled.button`
 `
 
 
-export const CalculatorSizer = styled.div`
-    display: flex;
-    min-height: 60vh;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    z-index: 1;
-`
-
 export const CalculatorContainer = styled.div`
-    width: 100%;
-    max-width: 400px;
+    align-self: center;
+    width: 520px;
+    height: 520px;
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 1px 2px 64px rgba(0, 0, 0, 0.9);
+    margin: 128px auto;
     `
 
 // display
@@ -71,7 +52,7 @@ export const Display = styled.div`
     text-align: right;
     background-color: var(--dark);
     color: var(--light);
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 300;
 `;
 
@@ -97,7 +78,7 @@ export const Deletear = styled(OperatorButton)``
 export const Digits = styled.div`
     display: flex;
     flex-wrap: wrap;
-
+    height: 71.1%;
 `
 export const CreateButton = styled(DigitsButton)``
 export const Cero = styled(DigitsButton)``

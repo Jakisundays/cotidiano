@@ -34,7 +34,7 @@ export const CoinImg = styled.img`
 
 export const CryptoContainer = styled.section`
     width: 520px;
-    max-height: 520px;
+    height: 520px;
     background: var(--dark);
     text-align: center;
     margin: 128px auto;

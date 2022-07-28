@@ -34,7 +34,7 @@ export const TodoAppContainer = styled.div`
   flex-direction: column;
   justify-content: start;
   width: 520px;
-  height: 600px;
+  height: 520px;
   background: var(--dark);
   text-align: center;
   margin: 128px auto;
