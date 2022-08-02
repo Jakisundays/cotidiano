@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const GymLabel = styled.label`
+const GymLabel = styled.h1`
     color: white;
     margin: 5px;
     font-weight: 2px;
@@ -54,12 +54,17 @@ export const GymSection = styled.div`
     border-radius: 8px;
     box-shadow: 1px 2px 64px rgba(0, 0, 0, 0.9);
     margin: 128px auto;
+
+    @media (max-width: 1100px){
+        width: 335px;
+        height: 635px;
+    }
 `
 //h1
 export const GymH1 = styled.h1`
     text-align: center;
     margin: 5px;
-    color: white;
+    color: var(--primary);
 `
 
 //form
@@ -67,7 +72,15 @@ export const GymForm = styled.form`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 7px;
+    justify-content: center;
+    grid-gap: 1px;
+    font-size: 15px;
+
+    @media (max-width: 1100px){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 `
 export const FormDisplay = styled.div`
     display: flex;
@@ -82,8 +95,12 @@ export const GymBreak = styled(GymLabel)``
 export const BreakInput = styled(Input)``
 export const GymSubmit = styled(OperatorButton)`
     border-radius: 8px;
-    margin-top: 20px;
+    margin-top: 25px;
     grid-area: 2 / 2 / 3 / 3;
+
+    @media (max-width: 1100px){
+        align-self: center;
+    }
 `
 //Gym Results
 export const GymResults = styled.div`
@@ -101,7 +118,7 @@ export const GymSubmited = styled.h2`
 export const GymClock = styled.div`
     text-align: center;
     margin: 18px;
-    color: var(--primary);
+    color: white;
     font-weight: 100px;
     font-size: 30px;
 `
@@ -110,7 +127,15 @@ export const GymClock = styled.div`
 export const GymButtons = styled.div`
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 1100px){
+        flex-wrap: wrap;
+    }
 `
 export const GymButton = styled(OperatorButton)`
     margin: 10px;
+`
+
+export const GymHr = styled.hr`
+    color: white;
 `

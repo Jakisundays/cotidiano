@@ -11,9 +11,9 @@ export const ClockScreen = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 5px;
-    border: 1px inset black;
     border-radius: 5px;
     background-color: var(--dark);
+    box-shadow: var(--primary) 0px 1px 10px;
 `
 
 export const ClockTime = styled.h1`

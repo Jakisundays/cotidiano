@@ -1,15 +1,21 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import { GymSection, GymClock, GymButtons, GymButton, GymForm, GymReps, RepsInput, GymTime, GymTimeInput, GymBreak, BreakInput, GymSubmit, FormDisplay, GymResults, GymSubmited, GymHr, GymH1} from './GymComponents';
 
 const Gym = () => {
   //Estados
   const [time, setTime] = useState(0);
   const [timeOn, setTimeOn] = useState(false);
-  const [gymTime, setGymTime] = useState(null);
-  const [reps, setReps] = useState(null);
   const [relax, setRelax] = useState(null);
-  const [statico, setStatico] = useState(null);
   const [relaxOn, setRelaxOn] = useState(false);
+  const [formOn, setFormOn] = useState(true);
+  const [reps, setReps] = useState(null);
+  const [statico, setStatico] = useState(null);
+  const [gymTime, setGymTime] = useState(null);
+
+//Refs
+const gymRef = useRef();
+const repsRef = useRef();
+const relaxRef = useRef();
 
   //useEffects:
 
@@ -78,11 +84,9 @@ const Gym = () => {
   }
   //updates el estado con los valores del input
   const update = () =>{
-    setGymTime(document.getElementById('gymTime').value);
-    setReps(document.getElementById('gymReps').value);
-    setRelax(document.getElementById('gymBreak').value);
-    setStatico(document.getElementById('gymBreak').value);
-  };
+    setStatico(relax);
+    setFormOn(!formOn)
+  }
   // m
   //Evita que la pagina se recargue y q se resete el estado.
   const fnHandleSubmit = event => {
@@ -96,63 +100,83 @@ const Gym = () => {
     setRelax(null);
     setReps(null);
     setRelaxOn(false);
-    setStatico(null);
-    document.getElementById('gymReps').value = (null);
-    document.getElementById('gymTime').value = (null);
-    document.getElementById('gymBreak').value = (null);
+    setFormOn(true);
+    gymRef.current.value = null;
+    repsRef.current.value = null;
+    relaxRef.current.value = null;
   };
 
   const preview = () =>{
-    if(timeOn && relaxOn){
-      return 'Presiona start o agrega detalles'
+    if(!timeOn && !relaxOn){
+      return <GymClock>Presiona start o agrega detalles </GymClock>
     }else if
     (timeOn && !relaxOn){
-      return 'Timer: '
+      return <GymClock>Timer: {time}</GymClock>
     }else if(!timeOn & relaxOn){
-      return 'Break Time: '
+      return <GymClock>Break: {relax}</GymClock>
     }
   }
   
   return (
       <GymSection>
         <GymH1>Gym Reps Counter </GymH1>
-        {/* form  quitar*/}
-        <GymForm onSubmit={fnHandleSubmit}>
-          <FormDisplay>
-            {/* GymReps input */}
-            <GymReps for='gymReps'>Reps: </GymReps>
-            <RepsInput type='number' id='gymReps' min='0'/>
-          </FormDisplay>
-          <FormDisplay>
-            {/* GymTime Input */}
-            <GymTime for='gymTime'>Time: </GymTime>
-            <GymTimeInput type='number' id='gymTime'min='0'/>
-          </FormDisplay>
-            <FormDisplay>
-            {/* GymBreak Input */}
-            <GymBreak for='gymReps'>BreakTime: </GymBreak>
-            <BreakInput type='number' id='gymBreak' min='0' />
-            </FormDisplay>
-          {/* SubmitButton */}
-          <GymSubmit type="submit" onClick={update} >Submit</GymSubmit>
-        </GymForm>
+        <GymHr />
+
+        {formOn && <GymForm onSubmit={fnHandleSubmit}>
+
+<FormDisplay>
+  <GymReps>Reps: </GymReps>
+  <RepsInput 
+  type='number' 
+  min='0'
+  ref={repsRef}
+  value={reps}
+  onChange={(e) => setReps(e.target.value)}/>
+</FormDisplay>
+
+<FormDisplay>
+  <GymTime>Time: </GymTime>
+  <GymTimeInput 
+  type='number' 
+  min='0'
+  ref={gymRef}
+  value={gymTime}
+  onChange={(e) => setGymTime(e.target.value)} />
+</FormDisplay>
+
+  <FormDisplay>
+  <GymBreak>BreakTime: </GymBreak>
+  <BreakInput type='number'
+   min='0'
+   ref={relaxRef}
+  value={relax}
+  onChange={(e) => setRelax(e.target.value)} />
+  </FormDisplay>
+{/* SubmitButton */}
+<GymSubmit type="submit" onClick={update} >Submit</GymSubmit>
+</GymForm>}
 
 
+        {!formOn &&  
         <GymResults>
           <GymSubmited>Reps: {reps}</GymSubmited>
           <GymSubmited>Duration: {gymTime}</GymSubmited>
-          <GymSubmited>Break Time: {relax}</GymSubmited>
-        </GymResults>
+          <GymSubmited>Break Time: {statico}</GymSubmited>
+        </GymResults>  }
+        
+         <GymClock>{preview()}</GymClock>
+         {/* <GymClock>{relaxOn ? 'Break Time: ' + relax : 'Timer: ' + time}</GymClock> */}
 
-        <GymClock>{relaxOn ? 'Break Time: ' + relax : 'Timer: ' + time}</GymClock>
+         <GymButtons>
+           <GymButton onClick={() => setTimeOn(true)}>Start</GymButton>
+           <GymButton onClick={() => setTimeOn(true)}>Resume</GymButton>
+           <GymButton onClick={() => setTimeOn(false)}>Stop</GymButton>
+           <GymButton onClick={reset}>Reset</GymButton>
+         </GymButtons> 
+        
 
-        {/* buttones */}
-        <GymButtons>
-          <GymButton onClick={start}>Start</GymButton>
-          <GymButton onClick={() => setTimeOn(true)}>Resume</GymButton>
-          <GymButton onClick={() => setTimeOn(false)}>Stop</GymButton>
-          <GymButton onClick={reset}>Reset</GymButton>
-        </GymButtons>
+
+       
 
       </GymSection> 
   )

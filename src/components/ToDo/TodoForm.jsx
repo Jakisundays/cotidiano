@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { TodoButtonEdit, TodoFormContainer, TodoInputEdit, TodoInput, TodoButton} from '/Users/jacobdominguez/Documents/codiyapa/cotidiano/src/components/ToDo/TodoComponents.js';
 
 const TodoForm = (props) => {
     const [input, setInput] = useState(props.edit ? props.edit.value : '');
     const inputRef = useRef(null);
-    useEffect(() => {
-        inputRef.current.focus();
-      });
+    // useEffect(() => {
+    //     inputRef.current.focus();
+    //   });
     
     const handleChange = e => {
         setInput(e.target.value);

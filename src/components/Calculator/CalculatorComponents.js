@@ -44,6 +44,11 @@ export const CalculatorContainer = styled.div`
     overflow: hidden;
     box-shadow: 1px 2px 64px rgba(0, 0, 0, 0.9);
     margin: 128px auto;
+
+    @media (max-width: 1100px){
+        width: 335px;
+        height: 520px;
+    }
     `
 
 // display

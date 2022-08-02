@@ -43,6 +43,10 @@ export const TodoAppContainer = styled.div`
   z-index: 1;
   box-shadow: 1px 2px 64px rgba(0, 0, 0, 0.9);
   overflow: scroll;
+
+  @media (max-width: 1100px){
+    width: 335px;
+}
 `
 
 export const TodoH1 = styled.h1`
@@ -114,7 +118,8 @@ export const TodoInput = styled(TodoInputArt)``
 export const TodoInputEdit = styled(TodoInputArt)`
   border: 2px solid var(--primary);
 `
-export const TodoButton = styled(TodoButtonArt)``
+export const TodoButton = styled(TodoButtonArt)`
+`
 export const TodoButtonEdit = styled(TodoButtonArt)`
   background: linear-gradient(
     90deg,

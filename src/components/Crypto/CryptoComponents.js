@@ -15,6 +15,12 @@ export const CoinContainer = styled.section`
     border-radius: 10px;
     margin: 25px;
     text-align: center;
+
+    @media (max-width: 1100px){
+        width: 250px;
+        height: 315px;
+    }
+    
 `
 export const CoinH1 = styled.h1`
     font-size: 30px;
@@ -43,6 +49,12 @@ export const CryptoContainer = styled.section`
     z-index: 1;
     box-shadow: 1px 2px 64px rgba(0, 0, 0, 0.9);
     overflow: scroll;
+
+    @media (max-width: 1100px){
+        width: 335px;
+        height: 520px;
+        overflow: auto;
+    }
 `
 export const CryptoHead = styled.div`
     width: 100%;
