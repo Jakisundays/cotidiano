@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/LessThinking/static/css/main.9c3f31b2.css",
-    "main.js": "/LessThinking/static/js/main.30174522.js",
-    "index.html": "/LessThinking/index.html",
-    "main.9c3f31b2.css.map": "/LessThinking/static/css/main.9c3f31b2.css.map",
-    "main.30174522.js.map": "/LessThinking/static/js/main.30174522.js.map"
+    "main.css": "/cotidiano/static/css/main.9c3f31b2.css",
+    "main.js": "/cotidiano/static/js/main.5ae30328.js",
+    "index.html": "/cotidiano/index.html",
+    "main.9c3f31b2.css.map": "/cotidiano/static/css/main.9c3f31b2.css.map",
+    "main.5ae30328.js.map": "/cotidiano/static/js/main.5ae30328.js.map"
   },
   "entrypoints": [
     "static/css/main.9c3f31b2.css",
-    "static/js/main.30174522.js"
+    "static/js/main.5ae30328.js"
   ]
 }
