@@ -3,6 +3,10 @@ import styled from "styled-components"
 export const ClockContainer = styled.div`
     z-index: 1;
     grid-area: 1 / 1 / 2 / 3;
+
+    @media (max-width: 1100px){
+        width: 100%;
+    }
 `
 
 export const ClockScreen = styled.div`

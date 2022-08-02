@@ -65,7 +65,7 @@ const relaxRef = useRef();
       setTimeOn(true)
       setRelax(statico);
     }
-  },[relax])
+  },[relax, statico])
 
   useEffect(() => {
     if(reps == 0){
@@ -75,13 +75,6 @@ const relaxRef = useRef();
 
   //Funciones
 
-  //comenzar el contador y cambiar los valores de los inputs
-  const start = () =>{
-    setTimeOn(true);
-    document.getElementById('gymReps').value = (null);
-    document.getElementById('gymTime').value = (null);
-    document.getElementById('gymBreak').value = (null);
-  }
   //updates el estado con los valores del input
   const update = () =>{
     setStatico(relax);
