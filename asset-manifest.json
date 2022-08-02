@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Jakisundays/cotidiano.git/static/css/main.9c3f31b2.css",
-    "main.js": "/Jakisundays/cotidiano.git/static/js/main.069d05f9.js",
-    "index.html": "/Jakisundays/cotidiano.git/index.html",
-    "main.9c3f31b2.css.map": "/Jakisundays/cotidiano.git/static/css/main.9c3f31b2.css.map",
-    "main.069d05f9.js.map": "/Jakisundays/cotidiano.git/static/js/main.069d05f9.js.map"
+    "main.css": "/cotidiano/static/css/main.9c3f31b2.css",
+    "main.js": "/cotidiano/static/js/main.e2a66a78.js",
+    "index.html": "/cotidiano/index.html",
+    "main.9c3f31b2.css.map": "/cotidiano/static/css/main.9c3f31b2.css.map",
+    "main.e2a66a78.js.map": "/cotidiano/static/js/main.e2a66a78.js.map"
   },
   "entrypoints": [
     "static/css/main.9c3f31b2.css",
-    "static/js/main.069d05f9.js"
+    "static/js/main.e2a66a78.js"
   ]
 }
