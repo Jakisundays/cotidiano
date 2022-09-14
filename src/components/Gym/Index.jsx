@@ -101,7 +101,7 @@ const relaxRef = useRef();
 
   const preview = () =>{
     if(!timeOn && !relaxOn){
-      return <GymClock>Presiona start o agrega detalles </GymClock>
+      return <GymClock> Press start / Add details </GymClock>
     }else if
     (timeOn && !relaxOn){
       return <GymClock>Timer: {time}</GymClock>

@@ -31,6 +31,7 @@ const Input = styled.input`
     apparance: none;
     border: 1px outset var(--light);
     color: var(--dark);
+    font-size: 100px;
     cursor: pointer;
     transition: 0.4s;
     flex: 1 1 33.333%;
